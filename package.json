@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "build": "mkdir -p build && cp src/index.html src/*.css build/ && browserify src/scripts/app.js > build/app.js",
+    "watch": "watchify src/scripts/app.js -o build/app.js",
+    "gh": "mkdir -p gh-pages && cp build/* gh-pages/"
+  },
+  "devDependencies": {
+    "browserify": "^8.0.2",
+    "watchify": "^2.2.1"
+  }
+}

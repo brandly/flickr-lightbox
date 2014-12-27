@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+button:focus {
+  outline: none;
+}
+
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+.image-thumbnail {
+  max-width: 205px;
+  margin: 10px;
+}
+
+.lightbox {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.lightbox-image {
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.lightbox button {
+  position: fixed;
+  border: none;
+  background: none;
+  color: #555;
+}
+
+.lightbox button:hover {
+  cursor: pointer;
+}
+
+.lightbox-close {
+  top: 5px;
+  right: 5px;
+  font-size: 1.5rem;
+}
+
+.lightbox-previous {
+  top: 50%;
+  left: 5px;
+  font-size: 3rem;
+}
+
+.lightbox-next {
+  top: 50%;
+  right: 5px;
+  font-size: 3rem;
+}
+
+.lightbox-title-wrapper {
+  position: fixed;
+  top: 0;
+  height: 10%;
+  width: 100%;
+}
+
+.lightbox-title {
+  text-align: center;
+  font-size: 2rem;
+  line-height: 2;
+  font-weight: 600;
+  color: #444;
+}

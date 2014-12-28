@@ -1,3 +1,5 @@
+'use strict';
+
 var Flickr = require('./lib/flickr');
 var Lightbox = require('./lib/lightbox');
 var config = require('./config');

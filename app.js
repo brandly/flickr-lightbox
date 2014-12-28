@@ -1,4 +1,6 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"/Users/brandly/Documents/code/web/flickr-lightbox/src/scripts/app.js":[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+'use strict';
+
 var Flickr = require('./lib/flickr');
 var Lightbox = require('./lib/lightbox');
 var config = require('./config');
@@ -26,13 +28,13 @@ flickr.getPhotos(config.photosetId, function (photos) {
   document.querySelector('.container').appendChild(fragment);
 });
 
-},{"./config":"/Users/brandly/Documents/code/web/flickr-lightbox/src/scripts/config.json","./lib/flickr":"/Users/brandly/Documents/code/web/flickr-lightbox/src/scripts/lib/flickr.js","./lib/lightbox":"/Users/brandly/Documents/code/web/flickr-lightbox/src/scripts/lib/lightbox.js"}],"/Users/brandly/Documents/code/web/flickr-lightbox/src/scripts/config.json":[function(require,module,exports){
-module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports={
+},{"./config":2,"./lib/flickr":3,"./lib/lightbox":4}],2:[function(require,module,exports){
+module.exports={
   "apiKey": "c9b993b21d399e4a3ff66a8fbd6365c4",
   "photosetId": "72157626579923453"
 }
 
-},{}],"/Users/brandly/Documents/code/web/flickr-lightbox/src/scripts/lib/flickr.js":[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 'use strict';
 
 function Flickr(apiKey) {
@@ -90,7 +92,8 @@ Flickr.prototype.getPhotos = function getPhotos(photosetId, callback) {
 
 module.exports = Flickr;
 
-},{}],"/Users/brandly/Documents/code/web/flickr-lightbox/src/scripts/lib/lightbox.js":[function(require,module,exports){
+},{}],4:[function(require,module,exports){
+'use strict';
 
 var classNames = {
   lightbox: 'lightbox',
@@ -199,4 +202,4 @@ Lightbox.prototype.hide = function hide() {
 
 module.exports = Lightbox;
 
-},{}]},{},["/Users/brandly/Documents/code/web/flickr-lightbox/src/scripts/app.js"]);
+},{}]},{},[1]);

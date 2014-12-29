@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"/Users/brandly/Documents/code/web/flickr-lightbox/src/scripts/app.js":[function(require,module,exports){
 'use strict';
 
 var Flickr = require('./lib/flickr');
@@ -28,13 +28,13 @@ flickr.getPhotos(config.photosetId, function (photos) {
   document.querySelector('.container').appendChild(fragment);
 });
 
-},{"./config":2,"./lib/flickr":3,"./lib/lightbox":4}],2:[function(require,module,exports){
-module.exports={
+},{"./config":"/Users/brandly/Documents/code/web/flickr-lightbox/src/scripts/config.json","./lib/flickr":"/Users/brandly/Documents/code/web/flickr-lightbox/src/scripts/lib/flickr.js","./lib/lightbox":"/Users/brandly/Documents/code/web/flickr-lightbox/src/scripts/lib/lightbox.js"}],"/Users/brandly/Documents/code/web/flickr-lightbox/src/scripts/config.json":[function(require,module,exports){
+module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports=module.exports={
   "apiKey": "c9b993b21d399e4a3ff66a8fbd6365c4",
   "photosetId": "72157626579923453"
 }
 
-},{}],3:[function(require,module,exports){
+},{}],"/Users/brandly/Documents/code/web/flickr-lightbox/src/scripts/lib/flickr.js":[function(require,module,exports){
 'use strict';
 
 function Flickr(apiKey) {
@@ -92,7 +92,7 @@ Flickr.prototype.getPhotos = function getPhotos(photosetId, callback) {
 
 module.exports = Flickr;
 
-},{}],4:[function(require,module,exports){
+},{}],"/Users/brandly/Documents/code/web/flickr-lightbox/src/scripts/lib/lightbox.js":[function(require,module,exports){
 'use strict';
 
 var classNames = {
@@ -115,6 +115,8 @@ function Lightbox(photos) {
 
   this.hide();
   document.body.appendChild(this.element);
+
+  this.bindKeyboardShortcuts();
 }
 
 // A helper for piecing together the DOM elements we need
@@ -200,6 +202,37 @@ Lightbox.prototype.hide = function hide() {
   this.element.style.display = 'none';
 };
 
+Lightbox.prototype.isOpen = function isOpen() {
+  return this.element.style.display === '';
+};
+
+var keyCode = {
+  left: 37,
+  right: 39,
+  escape: 27
+};
+
+Lightbox.prototype.bindKeyboardShortcuts = function bindKeyboardShortcuts() {
+  var lightbox = this;
+  window.addEventListener('keyup', function (event) {
+    if (lightbox.isOpen()) {
+      switch (event.which) {
+        case keyCode.left:
+          lightbox.previousPhoto();
+          break;
+
+        case keyCode.right:
+          lightbox.nextPhoto();
+          break;
+
+        case keyCode.escape:
+          lightbox.hide();
+          break;
+      }
+    }
+  });
+};
+
 module.exports = Lightbox;
 
-},{}]},{},[1]);
+},{}]},{},["/Users/brandly/Documents/code/web/flickr-lightbox/src/scripts/app.js"]);

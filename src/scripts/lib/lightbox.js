@@ -20,6 +20,8 @@ function Lightbox(photos) {
 
   this.hide();
   document.body.appendChild(this.element);
+
+  this.bindKeyboardShortcuts();
 }
 
 // A helper for piecing together the DOM elements we need
@@ -103,6 +105,37 @@ Lightbox.prototype.show = function show() {
 
 Lightbox.prototype.hide = function hide() {
   this.element.style.display = 'none';
+};
+
+Lightbox.prototype.isOpen = function isOpen() {
+  return this.element.style.display === '';
+};
+
+var keyCode = {
+  left: 37,
+  right: 39,
+  escape: 27
+};
+
+Lightbox.prototype.bindKeyboardShortcuts = function bindKeyboardShortcuts() {
+  var lightbox = this;
+  window.addEventListener('keyup', function (event) {
+    if (lightbox.isOpen()) {
+      switch (event.which) {
+        case keyCode.left:
+          lightbox.previousPhoto();
+          break;
+
+        case keyCode.right:
+          lightbox.nextPhoto();
+          break;
+
+        case keyCode.escape:
+          lightbox.hide();
+          break;
+      }
+    }
+  });
 };
 
 module.exports = Lightbox;
